@@ -98,7 +98,6 @@ This step installs the DHCP server package on Debian/Ubuntu-based systems.
 
 **Code:**
 ```bash
-# For Debian/Ubuntu-based systems
 sudo apt update
 sudo apt install isc-dhcp-server
 ```
@@ -112,7 +111,7 @@ The main configuration file for the ISC DHCP server is located at `/etc/dhcp/dhc
 
 **Code:**
 ```bash
-# Open the DHCP configuration file
+
 sudo nano /etc/dhcp/dhcpd.conf
 ```
 
@@ -127,10 +126,10 @@ In the configuration file, define the subnet and the range of IP addresses that 
 ```bash
 # Example DHCP configuration
 subnet 192.168.1.0 netmask 255.255.255.0 {
-    range 192.168.1.100 192.168.1.200;  # Range of IPs to be assigned
-    option routers 192.168.1.1;         # Default gateway
-    option domain-name "example.com";   # Domain name
-    option domain-name-servers 192.168.1.1;  # DNS server
+    range 192.168.1.100 192.168.1.200;  
+    option routers 192.168.1.1;         
+    option domain-name "example.com";   
+    option domain-name-servers 192.168.1.1;  
 }
 ```
 
@@ -143,7 +142,7 @@ You may want to specify the hardware type for which the server is providing addr
 **Code:**
 ```bash
 # Specify hardware type
-option hardware-type 1;  # 1 indicates Ethernet
+option hardware-type 1;
 ```
 ---
 
@@ -159,7 +158,7 @@ In some systems, you need to specify which network interface the DHCP server sho
 sudo nano /etc/default/isc-dhcp-server
 
 # Change the INTERFACES line to your network interface
-INTERFACES="eth0"  # Replace eth0 with your network interface name
+INTERFACES="eth160"  
 ```
 ---
 #### Step 6: Start and Enable DHCP Server
